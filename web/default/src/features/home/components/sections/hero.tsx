@@ -57,13 +57,13 @@ export function Hero(props: HeroProps) {
           className='landing-animate-fade-up text-[clamp(2rem,5.5vw,3.5rem)] leading-[1.15] font-bold tracking-tight'
           style={{ animationDelay: '0ms' }}
         >
-          {t('Unified API Gateway for')}
+          {t('AI large model API aggregation service platform')}
           <br />
           <span className='bg-gradient-to-r from-blue-400 via-violet-400 to-purple-500 bg-clip-text text-transparent'>
-            {t('All Your AI Models')}
+            {t('Professional and Stable')}
           </span>
         </h1>
-        <p
+        {/* <p
           className='landing-animate-fade-up text-muted-foreground/80 mt-5 max-w-lg text-base leading-relaxed opacity-0 md:text-lg'
           style={{ animationDelay: '80ms' }}
         >
@@ -71,7 +71,7 @@ export function Hero(props: HeroProps) {
           {t(
             'is an open-source AI API gateway for self-hosted deployments. Connect multiple upstream services, manage models, keys, quotas, logs, and routing policies in one place.'
           )}
-        </p>
+        </p> */}
         <div
           className='landing-animate-fade-up mt-8 flex items-center gap-3 opacity-0'
           style={{ animationDelay: '160ms' }}
