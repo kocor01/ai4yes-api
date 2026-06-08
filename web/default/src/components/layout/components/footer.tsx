@@ -143,7 +143,8 @@ function ProjectAttribution(props: { currentYear: number; inline?: boolean }) {
   }
   return (
     <div className='text-muted-foreground/45 text-center text-xs sm:text-right'>
-      {content}
+      {/* {content} */}
+      {t('Unified API Gateway for')}{t('Vast Range of AI Models')}
     </div>
   )
 }

@@ -17,7 +17,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 For commercial licensing, please contact support@quantumnous.com
 */
 import { Link } from '@tanstack/react-router'
-import { CherryStudio } from '@lobehub/icons'
+// import { CherryStudio } from '@lobehub/icons'
 import { ArrowRight, BookOpen } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useStatus } from '@/hooks/use-status'
@@ -144,7 +144,7 @@ export function Hero(props: HeroProps) {
                   {t('Go to Dashboard')}
                   <ArrowRight className='ml-1.5 size-4 transition-transform duration-200 group-hover:translate-x-0.5' />
                 </Button>
-                {renderDocsButton()}
+                {/* {renderDocsButton()} */}
               </>
             ) : (
               <>
@@ -162,13 +162,13 @@ export function Hero(props: HeroProps) {
                 >
                   {t('View Pricing')}
                 </Button>
-                {renderDocsButton()}
+                {/* {renderDocsButton()} */}
               </>
             )}
           </div>
 
           {/* Supported Apps (参考图二样式，进行卡片化和信息扩充设计，增加视觉高度) */}
-          <div
+          {/* <div
             className='landing-animate-fade-up mt-10 w-full max-w-xl opacity-0'
             style={{ animationDelay: '240ms' }}
           >
@@ -183,7 +183,7 @@ export function Hero(props: HeroProps) {
               </p>
             </div>
             <div className='flex flex-wrap items-center gap-3'>
-              {/* Cherry Studio */}
+              // Cherry Studio
               <a
                 href='https://cherry-ai.com'
                 target='_blank'
@@ -194,7 +194,7 @@ export function Hero(props: HeroProps) {
                 <span>Cherry Studio</span>
               </a>
 
-              {/* CC Switch */}
+              // Switch
               <a
                 href='https://ccswitch.io'
                 target='_blank'
@@ -221,13 +221,13 @@ export function Hero(props: HeroProps) {
                 <span>CC Switch</span>
               </a>
 
-              {/* "更多" */}
+              // "更多"
               <div className='group border-border/40 bg-muted/15 text-foreground/55 hover:border-border hover:bg-muted/30 hover:text-foreground flex cursor-default items-center gap-2.5 rounded-full border px-5 py-2.5 text-sm font-medium shadow-[0_1px_2.5px_rgba(0,0,0,0.01)] backdrop-blur-xs transition-all duration-300 hover:scale-[1.02]'>
                 <MoreIcon />
                 <span>{t('More Apps')}</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Column: Hero Terminal API Demo */}
