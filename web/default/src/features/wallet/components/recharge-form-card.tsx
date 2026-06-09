@@ -118,10 +118,19 @@ export function RechargeFormCard({
 
   const handleAmountChange = (value: string) => {
     setLocalAmount(value)
-    const numValue = parseInt(value) || 0
-    if (numValue >= 0) {
+    if (value === '') return
+    const numValue = parseInt(value)
+    if (!isNaN(numValue) && numValue >= 0) {
       onTopupAmountChange(numValue)
     }
+  }
+
+  const handleAmountBlur = () => {
+    const raw = parseFloat(localAmount)
+    const intVal = isNaN(raw) ? 0 : Math.trunc(raw)
+    const finalVal = intVal < minTopup ? minTopup : intVal
+    setLocalAmount(finalVal.toString())
+    onTopupAmountChange(finalVal)
   }
 
   const hasConfigurableTopup =
@@ -284,8 +293,8 @@ export function RechargeFormCard({
                     type='number'
                     value={localAmount}
                     onChange={(e) => handleAmountChange(e.target.value)}
-                    min={minTopup}
-                    placeholder={`Minimum ${minTopup}`}
+                    onBlur={handleAmountBlur}
+                    placeholder={`${t('Minimum recharge amount in USD')} ${minTopup}`}
                     className='h-9 text-base sm:h-10 sm:text-lg'
                   />
                   <div className='bg-muted/30 flex min-h-9 items-center justify-between gap-2 rounded-md border px-3 lg:min-w-52'>
