@@ -855,7 +855,7 @@ export function ModelDetailsApi(props: {
       <CodeSamplesSection model={props.model} endpointMap={props.endpointMap} />
       <AuthSection />
       <SupportedParametersSection model={props.model} />
-      <RateLimitsSection model={props.model} />
+      {/* <RateLimitsSection model={props.model} /> */}
     </div>
   )
 }

@@ -71,7 +71,8 @@ import type {
   TokenUnit,
 } from '../types'
 import { DynamicPricingBreakdown } from './dynamic-pricing-breakdown'
-import { ModelDetailsApi, ModelDetailsProviderInfo } from './model-details-api'
+// import { ModelDetailsApi, ModelDetailsProviderInfo } from './model-details-api'
+import { ModelDetailsApi } from './model-details-api'
 import { ModalityIcons } from './model-details-modalities'
 import { ModelDetailsPerformance } from './model-details-performance'
 import { ModelDetailsQuickStats } from './model-details-quick-stats'
@@ -884,7 +885,8 @@ function GroupPricingSection(props: {
   )
 }
 
-const TAB_VALUES = ['overview', 'performance', 'api'] as const
+// const TAB_VALUES = ['overview', 'performance', 'api'] as const
+const TAB_VALUES = ['overview', 'api'] as const
 type TabValue = (typeof TAB_VALUES)[number]
 
 const TAB_META: Record<
@@ -892,7 +894,7 @@ const TAB_META: Record<
   { icon: React.ComponentType<{ className?: string }>; labelKey: string }
 > = {
   overview: { icon: Info, labelKey: 'Overview' },
-  performance: { icon: HeartPulse, labelKey: 'Performance' },
+  // performance: { icon: HeartPulse, labelKey: 'Performance' },
   api: { icon: Code2, labelKey: 'API' },
 }
 
@@ -922,7 +924,7 @@ export function ModelDetailsContent(props: ModelDetailsContentProps) {
       <ModelHeader model={props.model} />
 
       <Tabs defaultValue='overview' className='gap-4'>
-        <TabsList className='bg-muted/60 grid w-full grid-cols-3 gap-1 rounded-lg p-1 group-data-horizontal/tabs:h-auto'>
+        <TabsList className='bg-muted/60 grid w-full grid-cols-2 gap-1 rounded-lg p-1 group-data-horizontal/tabs:h-auto'>
           {TAB_VALUES.map((value) => {
             const Icon = TAB_META[value].icon
             return (
@@ -939,7 +941,7 @@ export function ModelDetailsContent(props: ModelDetailsContentProps) {
         </TabsList>
 
         <TabsContent value='overview' className='space-y-6 outline-none'>
-          <OverviewSummaryGrid model={props.model} />
+          {/* <OverviewSummaryGrid model={props.model} /> */}
 
           <section className='bg-card/60 space-y-5 rounded-xl border p-4 shadow-sm'>
             <SectionTitle>{t('Pricing')}</SectionTitle>
@@ -965,15 +967,15 @@ export function ModelDetailsContent(props: ModelDetailsContentProps) {
             />
           </section>
 
-          <ModelDetailsQuickStats metadata={metadata} />
+          {/* <ModelDetailsQuickStats metadata={metadata} /> */}
 
-          <ModelSignalsSection
+          {/* <ModelSignalsSection
             capabilities={metadata.capabilities}
             input={metadata.input_modalities}
             output={metadata.output_modalities}
-          />
+          /> */}
 
-          <ModelDetailsProviderInfo model={props.model} />
+          {/* <ModelDetailsProviderInfo model={props.model} /> */}
         </TabsContent>
 
         <TabsContent value='performance' className='outline-none'>
